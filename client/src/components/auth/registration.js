@@ -1,6 +1,8 @@
 import api from '../../api';
 
 const registration = async (event) => {
+  const registrationButton = document.querySelector('#registrationBtn');
+  if (!registrationButton) return;
   event.preventDefault();
   const formInputs = document.querySelectorAll('#registrationForm input');
   const profile = {};
@@ -12,7 +14,6 @@ const registration = async (event) => {
       profile.password = element.value;
     }
   });
-  console.log('gulay', profile);
   if (!profile.username && !profile.password) return;
   console.log('registration', profile);
   try {
@@ -21,9 +22,7 @@ const registration = async (event) => {
   } catch (error) {
     console.log('error', error);
   }
+  registrationButton.addEventListener('click', registration);
+
 };
 
-const registrationButton = document.querySelector('#registrationBtn');
-registrationButton.addEventListener('click', registration);
-
-// registration();
