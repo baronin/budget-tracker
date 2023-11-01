@@ -3,3 +3,156 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+*,
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+  color: rgb(245, 241, 217);
+  overflow: hidden;
+}
+
+.header {
+  padding: 20px 10px;
+  background-color: #8fd1b2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__title {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.header__navigation {
+  margin-left: auto;
+}
+
+.header__navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header__link {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.main {
+  padding: 40px 0;
+}
+
+.form-content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.form-content .form-items {
+  background-color: #36444b;
+  border: 3px solid #8fd1b2;
+  padding: 20px;
+  display: inline-block;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: left;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.form-content h3 {
+  color: #fff;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-content h3.form-title {
+  margin-bottom: 30px;
+}
+
+.form-content p {
+  color: #fff;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+.form-content label,
+.was-validated .form-check-input:invalid~.form-check-label,
+.was-validated .form-check-input:valid~.form-check-label {
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-content input[type=text],
+.form-content input[type=password],
+.form-content input[type=email],
+.form-content select {
+  width: 100%;
+  padding: 9px 20px;
+  text-align: left;
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  color: #8D8D8D;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.mv-up {
+  margin-top: -9px !important;
+  margin-bottom: 8px !important;
+}
+
+.invalid-feedback {
+  color: #ff606e;
+}
+
+.valid-feedback {
+  color: #2acc80;
+}
+
+.footer {
+  padding: 20px 10px;
+  background-color: #8fd1b2;
+}
+
+.footer__copyright {
+  color: #333;
+  text-align: center;
+}

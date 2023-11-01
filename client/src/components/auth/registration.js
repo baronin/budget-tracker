@@ -23,6 +23,4 @@ const registration = async (event) => {
     console.log('error', error);
   }
   registrationButton.addEventListener('click', registration);
-
 };
-
