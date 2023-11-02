@@ -47,6 +47,6 @@ class FetchClient {
   }
 }
 
-const fetchInstance = new FetchClient('http://127.0.0.1:3000/api');
+const fetchInstance = new FetchClient('http://127.0.0.1:5000');
 
 export default fetchInstance;
