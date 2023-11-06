@@ -1,4 +1,4 @@
-import registerUser from '../../api/api';
+import api from '../../api/api';
 
 const registrationForm = document.querySelector('.requires-validation');
 registrationForm.addEventListener('submit', async (e) => {
@@ -6,11 +6,15 @@ registrationForm.addEventListener('submit', async (e) => {
   const email = registrationForm.querySelector('[name="email"]').value;
   const userPassword = registrationForm.querySelector('[name="password"]').value;
 
-  registerUser(email, userPassword)
+  api
+    .post('registration', {
+      username: email,
+      password: userPassword,
+    })
     .then((response) => {
-      console.log(response);
+      console.log('Регистрация прошла успешно', response.data);
     })
     .catch((error) => {
-      console.log(error);
+      console.error('Ошибка при регистрации', error);
     });
 });
