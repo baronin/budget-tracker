@@ -1,15 +1,12 @@
-const axios = require('axios');
+import registerUser from '../../api/api';
 
 const registrationForm = document.querySelector('.requires-validation');
 registrationForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = registrationForm.querySelector('[name="email"]').value;
   const userPassword = registrationForm.querySelector('[name="password"]').value;
-  axios
-    .post('http://localhost:5000/auth/registration', {
-      username: email,
-      password: userPassword,
-    })
+
+  registerUser(email, userPassword)
     .then((response) => {
       console.log(response);
     })
