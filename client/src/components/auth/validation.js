@@ -1,17 +1,11 @@
-function initializeFormValidation() {
-  const forms = document.querySelectorAll('.requires-validation');
-  Array.from(forms).forEach((form) => {
-    form.addEventListener(
-      'submit',
-      (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      },
-      false,
-    );
+function initializeFormValidation(formElement, successHandler) {
+  formElement.addEventListener('submit', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (formElement.checkValidity()) {
+      successHandler();
+    }
+    formElement.classList.add('was-validated');
   });
 }
-initializeFormValidation();
+export default initializeFormValidation;

@@ -1,29 +1,46 @@
-import fetchInstance from './fetchInstance';
-import ApiError from './ApiError';
+import { axiosInstance } from './axios-instance';
 
 const auth = {
   async registration(data) {
-    console.log('data', data);
     try {
-      return await fetchInstance.post('/auth/registration', data);
+      const response = await axiosInstance.post('/auth/registration', {
+        password: data.userPassword,
+        username: data.email,
+      });
+      return response.data;
     } catch (error) {
-      const { message } = await error.json();
-      console.dir(message);
-      throw new Error('Не удалось получить пользователей');
+      const errorItem = document.querySelector('#error-message');
+      console.log(errorItem);
+      if (error.response) {
+        console.log(error);
+        errorItem.innerHTML = `${error.response.data.message}`;
+        console.log('Ошибка при регистрации:', error.response.data);
+        console.log('Статус ошибки:', error.response.status);
+        console.log('Заголовки ошибки:', error.response.headers);
+      } else if (error.request) {
+        console.log('Запрос не получил ответ:', error.request);
+      } else {
+        console.log('Ошибка настройки запроса:', error.message);
+      }
     }
+    return null;
   },
   async login(data) {
     try {
-      return await fetchInstance.post('/auth/login', data);
+      const response = await axiosInstance.post('/auth/login', data);
+      return response.data;
     } catch (error) {
-      const emptyMessage = await error.json();
-      const nameInvalid = emptyMessage.error;
-      const errorMessage = {
-        status: error.status,
-        message: nameInvalid || emptyMessage,
-      };
-      throw new ApiError(errorMessage);
+      if (error.response) {
+        console.log('Ошибка при входе:', error.response.data);
+        console.log('Статус ошибки:', error.response.status);
+        console.log('Заголовки ошибки:', error.response.headers);
+      } else if (error.request) {
+        console.log('Запрос не получил ответ:', error.request);
+      } else {
+        console.log('Ошибка настройки запроса:', error.message);
+      }
     }
+    return null;
   },
 };
 
