@@ -10,10 +10,11 @@ const auth = {
       return response.data;
     } catch (error) {
       const errorItem = document.querySelector('#error-message');
-      console.log(errorItem);
       if (error.response) {
         console.log(error);
-        errorItem.innerHTML = `${error.response.data.message}`;
+        const errorMessage = document.createElement('div');
+        errorMessage.textContent = error.response.data.message;
+        errorItem.appendChild(errorMessage);
         console.log('Ошибка при регистрации:', error.response.data);
         console.log('Статус ошибки:', error.response.status);
         console.log('Заголовки ошибки:', error.response.headers);
