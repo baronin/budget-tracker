@@ -1,5 +1,5 @@
-import fetchInstance from './fetchInstance';
-import ApiError from './ApiError';
+import fetchInstance from './fetch-instance';
+import ApiError from './api-error';
 
 const admin = {
   async post(body) {

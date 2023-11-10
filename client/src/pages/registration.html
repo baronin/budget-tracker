@@ -26,7 +26,7 @@
           <div class="form-items">
             <h3>Зареєструйся зараз!</h3>
             <p>Заповніть всі поля</p>
-            <form class="requires-validation registration" novalidate method="POST" action="http://localhost:5000/auth/registration">
+            <form class="requires-validation registration" novalidate method="POST" action>
               <div class="col-md-12">
                 <input class="form-control" type="text" name="name" placeholder="Ваше повне ім'я" required />
                 <div class="valid-feedback">Таке ім'я підходить</div>
@@ -44,7 +44,7 @@
                 <div class="invalid-feedback" id="error-message"></div>
               </div>
               <div class="form-check mt-3">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                <input class="form-check-input" type="checkbox" checked id="invalidCheck" required />
                 <label for="invalidCheck" class="form-check-label">Я підтверджую, що всі дані вірні</label>
                 <div class="invalid-feedback">Будь-ласка, підтвердіть, що всі введені дані вірні</div>
               </div>
