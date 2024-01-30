@@ -2,16 +2,19 @@
   "name": "counting-house",
   "workspaces": [
     "server",
+    "server-mongo",
     "client"
   ],
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "setup": "npm install && npm run setup:server && npm run setup:client",
+    "setup": "npm install && npm run setup:server-mongo && npm run setup:server && npm run setup:client",
     "setup:server": "cd server && npm install",
+    "setup:server-mongo": "cd server-mongo && npm install",
     "setup:client": "cd client && npm install",
     "start:client": "npm run start --workspace=client",
     "start:server": "npm run dev --workspace=server",
+    "start:server-mongo": "npm run start:dev --workspace=server-mongo",
     "lint:client": "eslint ./client/src/**/*.js",
     "lint-fix": "eslint \"./client/src/**/*.{js,ts}\" --fix",
     "lint:server": "eslint \"./server/**/*.{js,ts}\"",
