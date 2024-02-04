@@ -1,4 +1,8 @@
 :root {
+  --color-main: #1c1c1c;
+  --color-blue: #00a0e3;
+  --color-light: #fff;
+  --color-yellow: #ffea47;
   --color-gray-1: #333;
   --color-green-1: #8fd1b2;
   --color-dark-blue: #233239;
@@ -28,8 +32,8 @@ body {
 html,
 body {
   height: 100%;
-  background-color: var(--background-primary);
-  color: #f5f1d9;
+  background-color: var(--color-light);
+  color: var(--color-main);
 }
 
 .header {
@@ -165,4 +169,19 @@ body {
 .footer__copyright {
   color: var(--color-text-primary);
   text-align: center;
+}
+
+.header__top {
+  display: flex;
+  padding: 15px 0;
+}
+
+.header__auth {
+  display: flex;
+  margin-left: auto;
+}
+
+.header__auth span {
+  margin-right: 10px;
+  margin-left: 10px;
 }
