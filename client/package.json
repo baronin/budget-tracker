@@ -2,34 +2,56 @@
   "name": "client",
   "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "Yaroslav Baronin",
   "license": "ISC",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --env mode=development",
     "watch": "webpack --watch",
-    "build": "webpack --mode production",
+    "build:dev": "webpack serve --env mode=development",
+    "build": "webpack --env mode=production --mode production",
+    "build:analazer": "webpack --env mode=production analyzer=true",
+    "build:mobile": "webpack --env mode=production --env platform=mobile",
+    "build:desktop": "webpack --env mode=production --env platform=desktop",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.3",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.0.11",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.4.0",
+    "@types/webpack-bundle-analyzer": "^4.6.4",
+    "@types/babel__core": "^7.20.3",
     "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.8.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
     "style-loader": "^3.3.3",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "react-refresh-typescript": "^2.0.9",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "copy-webpack-plugin": "^12.0.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kalyna-Serhii/Counting-house.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Kalyna-Serhii/Counting-house/issues"
-  },
-  "homepage": "https://github.com/Kalyna-Serhii/Counting-house#readme",
   "proxy": "http://127.0.0.1:3000"
 }
